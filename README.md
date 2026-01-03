@@ -64,7 +64,45 @@ graph TD
     M --> C
 ```
 
-## Viva-Ready Explanation
+## Project Interface Screenshots
+
+### Authentication & Setup
+![Main Interface](screenshots/LibInterface.png)
+*Initial System Interface*
+
+````carousel
+![Admin Login](screenshots/adminLogin.png)
+<!-- slide -->
+![User Login](screenshots/userLogin.png)
+<!-- slide -->
+![User Registration](screenshots/userRegistration.png)
+````
+
+### Admin Dashboard & Operations
+![Admin Dashboard](screenshots/adminInterface.png)
+*Admin Control Panel*
+
+````carousel
+![Add New Book](screenshots/addNewBook.png)
+<!-- slide -->
+![Library Inventory](screenshots/LibraryInventory.png)
+<!-- slide -->
+![Issue Book to User](screenshots/adminIssuesBookToUser.png)
+````
+
+### Student Dashboard & Search
+![User Dashboard](screenshots/userInterface.png)
+*Student View*
+
+````carousel
+![Search Books](screenshots/SearchBooks.png)
+<!-- slide -->
+![Search Result Details](screenshots/searchBookOption2.png)
+<!-- slide -->
+![Issued Books History](screenshots/IssuedBookUser.png)
+````
+
+## System Design & Technical Implementation
 
 ### File Handling
 The system uses **Binary Files (`.dat`)** to store data. We use `fread`, `fwrite`, and `fseek` for efficient data access. Binary files are chosen over text files because they are faster, more compact, and preserve the structure of the data directly.
