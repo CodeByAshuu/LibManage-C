@@ -19,31 +19,32 @@ void printHeader(const char* title) {
 
 void waitForEnter() {
     printf("\nPress Enter to continue...");
-    while(getchar() != '\n'); 
-    getchar(); // Capture the enter key
+    // Clear any remaining input and wait for a final Enter
+    // Since we'll use fgets everywhere, there shouldn't be much left,
+    // but this handles stray characters.
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF && c != 0);
 }
 
 int getIntInput(const char* prompt) {
+    char buffer[100];
     int value;
-    printf("%s", prompt);
-    while (scanf("%d", &value) != 1) {
-        printf("Invalid input. Please enter a number: ");
-        while(getchar() != '\n'); // Clear buffer
+    while (1) {
+        printf("%s", prompt);
+        if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
+            if (sscanf(buffer, "%d", &value) == 1) {
+                return value;
+            }
+        }
+        printf("Invalid input. Please enter a number.\n");
     }
-    return value;
 }
 
 void getStringInput(const char* prompt, char* buffer, int size) {
-    printf("%s", prompt);
-    // Flush input buffer if needed
-    // fflush(stdin); // Not standard, better to consume chars
+    if (prompt && strlen(prompt) > 0) {
+        printf("%s", prompt);
+    }
     
-    // Simple logic: if previous input left \n, we might need to skip strict consumption here depending on flow.
-    // Ideally we assume buffer is clear or we clear it before calling this.
-    // For now, let's use a safe fgets approach.
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF); // Clear any pending newlines
-
     if (fgets(buffer, size, stdin) != NULL) {
         size_t len = strlen(buffer);
         if (len > 0 && buffer[len-1] == '\n') {
