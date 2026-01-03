@@ -67,40 +67,47 @@ graph TD
 ## Project Interface Screenshots
 
 ### Authentication & Setup
-![Main Interface](screenshots/LibInterface.png)
-*Initial System Interface*
 
-````carousel
+*Initial System Interface*
+![Main Interface](screenshots/LibInterface.png)
+
+*Admin Login*
 ![Admin Login](screenshots/adminLogin.png)
-<!-- slide -->
+
+*User Login*
 ![User Login](screenshots/userLogin.png)
-<!-- slide -->
+
+*User Registration*
 ![User Registration](screenshots/userRegistration.png)
-````
+
 
 ### Admin Dashboard & Operations
-![Admin Dashboard](screenshots/adminInterface.png)
-*Admin Control Panel*
 
-````carousel
+*Admin Control Panel*
+![Admin Dashboard](screenshots/adminInterface.png)
+
+
+*Add New Book*
 ![Add New Book](screenshots/addNewBook.png)
-<!-- slide -->
+
+*Library Inventory*
 ![Library Inventory](screenshots/LibraryInventory.png)
-<!-- slide -->
+
+*Issue Book to User*
 ![Issue Book to User](screenshots/adminIssuesBookToUser.png)
-````
 
 ### Student Dashboard & Search
-![User Dashboard](screenshots/userInterface.png)
 *Student View*
+![User Dashboard](screenshots/userInterface.png)
 
-````carousel
+*Search Books*
 ![Search Books](screenshots/SearchBooks.png)
-<!-- slide -->
+
+*Search Result Details*
 ![Search Result Details](screenshots/searchBookOption2.png)
-<!-- slide -->
+
+*Issued Books History*
 ![Issued Books History](screenshots/IssuedBookUser.png)
-````
 
 ## System Design & Technical Implementation
 
